@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ember — your personal life companion. An offline-first Android app with no accounts, no analytics, no tracking.">
+  <title>Ember — Your Personal Life Companion</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .hero-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 60vh;
+    }
+
+    .hero-decoration {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: var(--color-accent-2-200);
+      border-radius: 50%;
+      top: -200px;
+      right: -150px;
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 56ch;
+    }
+
+    .hero-content h1 {
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-content p {
+      font-size: 17.5px;
+      line-height: 1.65;
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .stats-row {
+      display: flex;
+      justify-content: flex-start;
+      gap: clamp(20px, 5vw, 60px);
+      flex-wrap: wrap;
+      margin: clamp(60px, 12vw, 100px) 0;
+    }
+
+    .modules-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin: var(--space-4) 0;
+    }
+
+    .features-grid {
+      display: grid;
+      gap: var(--space-6);
+      margin: var(--space-6) 0;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: var(--space-6);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-divider);
+    }
+
+    .feature-row:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-family: var(--font-heading);
+      margin-bottom: var(--space-2);
+    }
+
+    .feature-body {
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 8vw, 80px);
+      align-items: center;
+    }
+
+    .two-column-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .two-column-left h2 {
+      margin-bottom: var(--space-3);
+    }
+
+    .two-column-left > p {
+      max-width: 56ch;
+    }
+
+    .see-inside-container {
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .feature-row {
+        grid-template-columns: 1fr;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-decoration {
+        width: 300px;
+        height: 300px;
+        top: -100px;
+        right: -50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="nav-brand">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12c0 2.84 1.22 5.39 3.16 7.16L3 22l4.84-1.16C9.61 22.78 10.74 23 12 23c5.52 0 10-4.48 10-10S17.52 2 12 2m-2 15h4v-4h-4v4m0-6h4V7h-4v4z"/>
+      </svg>
+      Ember
+    </a>
+    <a href="#modules">Modules</a>
+    <a href="privacy.html">Private by design</a>
+    <button class="btn btn-primary" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.ember.app'">Download</button>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section-hero">
+      <div class="container">
+        <div class="hero-container">
+          <div class="hero-decoration"></div>
+          <div class="hero-content">
+            <p class="eyebrow">Your Personal Life Companion</p>
+            <h1>Tend to your Embers</h1>
+            <p>Ember is an offline-first app for Android that helps you keep track of all the parts of your life—from notes and to-dos to journal entries and your bucket list. Everything stays on your device. No accounts, no servers, no tracking.</p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.ember.app'">Download for Android</button>
+              <button class="btn btn-ghost" onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})">See what's inside</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="section">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-coin stat-1">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Modules to hold your life</div>
+          </div>
+          <div class="stat-coin stat-2">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Accounts, servers, or trackers</div>
+          </div>
+          <div class="stat-coin stat-3">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Your data, yours alone</div>
+          </div>
+          <div class="stat-coin stat-4">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">No subscription needed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="section" id="modules">
+      <div class="container">
+        <p class="eyebrow">Nine ways to keep track</p>
+        <div class="modules-row">
+          <span class="tag tag-accent">Notes</span>
+          <span class="tag tag-accent-2">Bucket List</span>
+          <span class="tag tag-neutral">Reading List</span>
+          <span class="tag tag-accent">Recipes</span>
+          <span class="tag tag-accent-2">Reminders</span>
+          <span class="tag tag-neutral">To-dos</span>
+          <span class="tag tag-accent">Journal/Log</span>
+          <span class="tag tag-accent-2">People</span>
+          <span class="tag tag-neutral">Movies</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why It's Different -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Why it's different</p>
+        <div class="features-grid">
+          <div class="feature-row">
+            <div>
+              <h3 class="feature-title">Organise your world</h3>
+            </div>
+            <p class="feature-body">Ember gives you nine dedicated spaces for different parts of your life. Whether you're tracking ideas, collecting recipes, or planning your future, there's a place for everything. All in one app, all on your device.</p>
+          </div>
+          <div class="feature-row">
+            <div>
+              <h3 class="feature-title">Stay connected and inspired</h3>
+            </div>
+            <p class="feature-body">Keep photos, links, and notes together. Share moments with friends directly from the app. Stay inspired by revisiting your bucket list, reading list, or favorite movie recommendations whenever you need a pick-me-up.</p>
+          </div>
+          <div class="feature-row">
+            <div>
+              <h3 class="feature-title">Yours after the phone dies</h3>
+            </div>
+            <p class="feature-body">No cloud sync means no dependence on servers. Your data lives safely on your phone, encrypted by Android's built-in security. If your device ever dies, you can export everything manually, on your own terms.</p>
+          </div>
+          <div class="feature-row">
+            <div>
+              <h3 class="feature-title">Reflect on your life</h3>
+            </div>
+            <p class="feature-body">Write freely in your journal, revisit your achievements, and keep notes on the people who matter. Ember is designed to help you notice and appreciate the moments that make up your life.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home at a Glance -->
+    <section class="section">
+      <div class="container">
+        <div class="two-column">
+          <div class="two-column-left">
+            <p class="eyebrow">Home, at a glance</p>
+            <h2>Everything gathered round the fire</h2>
+            <p>When you open Ember, you see a beautiful overview of all nine modules at a glance. It's a warm hearth where all the pieces of your life come together.</p>
+          </div>
+          <div>
+            <div class="image-frame">
+              <img src="assets/images/Screenshot_20260718-090525.png" alt="Ember home screen showing all modules" class="washed">
+              <div class="pulse-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- See It in Action -->
+    <section class="section see-inside-container">
+      <div class="container">
+        <p class="eyebrow">See it in action</p>
+        <h2>9 modules gathering around the hearth</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-6); font-size: 14px;">And one flame to tend to: you</p>
+
+        <div class="carousel-container">
+          <div class="phone-frame">
+            <div class="carousel-slide active">
+              <img src="assets/images/Screenshot_20260718-090525.png" alt="Home screen">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/Screenshot_20260718-091100.png" alt="People module">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/Screenshot_20260718-091127-cf4278f6.png" alt="Another module view">
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-dots">
+          <div class="dot active" onclick="showSlide(0)"></div>
+          <div class="dot" onclick="showSlide(1)"></div>
+          <div class="dot" onclick="showSlide(2)"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA Band -->
+    <section class="section" id="download">
+      <div class="container">
+        <div class="download-band">
+          <h3>Take Ember home</h3>
+          <button class="btn btn-primary" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.ember.app'">Download Ember</button>
+          <div class="disclaimer">· Android 8.0 and up · no permissions requested</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Built with Flutter. No accounts, no analytics, no network calls, ever. | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+      currentSlide = index;
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+      });
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    // Auto-advance carousel every 4 seconds
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 4000);
+  </script>
+</body>
+</html>
