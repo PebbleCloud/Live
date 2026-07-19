@@ -158,12 +158,12 @@ figcaption {
 
 /* — sections — */
 .section {
-  padding: clamp(40px, 8vw, 80px) 0;
+  padding: clamp(20px, 4vw, 40px) 0;
 }
 
 .section-hero {
   position: relative;
-  padding: clamp(60px, 12vw, 100px) 0;
+  padding: clamp(30px, 6vw, 60px) 0;
 }
 
 .eyebrow {
@@ -324,7 +324,7 @@ figcaption {
 .download-band {
   background: var(--color-accent-2-100);
   border-radius: var(--radius-lg);
-  padding: clamp(40px, 8vw, 60px);
+  padding: clamp(30px, 5vw, 50px);
   text-align: center;
 }
 
@@ -347,10 +347,10 @@ figcaption {
 /* — footer — */
 footer {
   background: var(--color-surface);
-  padding: var(--space-6) clamp(20px, 5vw, 64px);
+  padding: var(--space-4) clamp(20px, 5vw, 64px);
   text-align: center;
   font-size: 13px;
-  margin-top: clamp(60px, 12vw, 100px);
+  margin-top: clamp(30px, 6vw, 60px);
 }
 
 footer a {
